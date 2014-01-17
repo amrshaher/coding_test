@@ -32,11 +32,26 @@ Complexity:
 */
 
 
-// You can start the code as shown below:
+// My Solution : Amr Shaher
+
  
 class Solution {
-    public int solution(int K, int[] A) {
-        // write your code here
-    }
+
+    /** count the bounded_slices method */
+	public int solution(int k, int[] A) 
+	{
+		int count = 0;
+		for (int p = 0; p < A.length; p++) 
+		{
+			for (int q = p; q < A.length; q++) 
+			{
+				if (((Math.max(A[p], A[q])) - (Math.min(A[p], A[q]))) <= k)
+					 count++;				
+			}
+		}
+		
+		return count;
 }
+}
+
 
